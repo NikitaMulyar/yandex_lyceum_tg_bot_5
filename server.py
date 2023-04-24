@@ -25,7 +25,7 @@ async def get_map(a):
         "z": "15"
     }
 
-    session = aiohttp.ClientSession(connector=aiohttp.TCPConnector(ssl=False))
+    session = aiohttp.ClientSession(connector=aiohttp.TCPConnector())
     try:
         async with session.get(URL_MAPS, params=map_params) as res:
             image = await res.content.read()
